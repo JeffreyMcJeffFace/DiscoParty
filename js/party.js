@@ -11,10 +11,12 @@ $(document).ready(function () {
             startFlash();
             $("button").text("Stop Party Time");
             partyTime = true;
+            playSound();
         } else {
             endFlash();
             $("button").text("Start Party Time");
             partyTime = false;
+            killSound();
         }
     });
     
@@ -54,5 +56,12 @@ function getColor() {
     return newColorText;
 }
 
+function playSound() {
+    $('#sound').html("<audio loop autoplay><source src='danceMusic.wav' type='audio/wav'></audio>");
+};
+
+function killSound() {
+    $('#sound').html("");
+}
 
 
